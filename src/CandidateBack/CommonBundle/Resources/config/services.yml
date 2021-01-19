@@ -1,0 +1,4 @@
+services:
+#    candidate_back_common.example:
+#        class: CandidateBack\CommonBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

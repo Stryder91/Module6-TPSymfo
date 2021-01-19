@@ -1,0 +1,54 @@
+{% extends '@CandidateBackAdmin/layout.html.twig' %}
+
+{% block content %}
+    <section>
+        <div class="container-fluid">
+            <div class="row" style="margin-top: 75px;">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <a href="#" class="btn btn-primary btn-sm btn-action">
+                        <span class="glyphicon glyphicon-plus"></span> Créer
+                    </a>
+                    <br>
+                    <br>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Ordre apparition</th>
+                                <th>Actif</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for competenceCategory in competenceCategories %}
+                                <tr>
+                                    <td>{{ competenceCategory.title }}</td>
+                                    <td>{{ competenceCategory.showOrder }}</td>
+                                    <td>
+                                        {% if competenceCategory.isPublished == true %}
+                                            <span class="fas fa-bolt"></span>
+                                        {% endif %}
+                                    </td>
+                                    <td style="width: 3%;">
+                                        <a href="#" class="btn btn-primary btn-sm" role="button" title="Editer">
+                                            <span class="fas fa-edit" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                    <td style="width: 3%;">
+                                        <a href="#" class="btn btn-primary btn-sm" role="button" title="Editer">
+                                            <span class="fas fa-trash" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

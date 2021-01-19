@@ -1,0 +1,5 @@
+realisation:
+    type: rest
+    resource:     "@CandidateBackCommonBundle/Controller/RealisationAPIController.php"
+    name_prefix:  api_
+

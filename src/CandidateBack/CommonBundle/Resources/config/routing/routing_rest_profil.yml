@@ -1,0 +1,5 @@
+profil:
+    type: rest
+    resource:     "@CandidateBackCommonBundle/Controller/ProfilAPIController.php"
+    name_prefix:  api_
+

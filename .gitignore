@@ -1,0 +1,53 @@
+### Symfony ###
+
+/web/bundles/
+/web/css/
+/web/js/
+/app/bootstrap.php.cache
+/app/config/parameters.yml
+/var/cache/*
+/var/logs/*
+/var/sessions/
+!var/sessions/.gitkeep
+!var/cache/.gitkeep
+!var/logs/.gitkeep
+/app/phpunit.xml
+
+
+### Composer ###
+/composer.phar
+
+### Vagrant ###
+/.vagrant/
+
+### PhpStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+/.idea/
+
+### macOS ###
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

@@ -1,0 +1,61 @@
+{# add navigation current nav mark #}
+{% set route = app.request.get('_route') %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Gestionnaire | CV{% endblock %}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    {% block stylesheets %}
+
+        {% stylesheets
+            '@CandidateBackCommonBundle/Resources/public/css/bootstrap-reboot.min.css'
+            '@CandidateBackCommonBundle/Resources/public/css/bootstrap-grid.min.css'
+            '@CandidateBackCommonBundle/Resources/public/css/bootstrap.min.css'
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
+
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+
+{% block header %}{% endblock %}
+
+{% block flash %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block javascripts %}
+
+    {% javascripts
+        '@CandidateBackCommonBundle/Resources/public/js/bootstrap.min.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script>
+        // get locale
+        locale = "{{ app.request.locale }}";
+        // get route
+        route = "{{ route }}";
+    </script>
+
+{% endblock %}
+
+</body>
+</html>
+

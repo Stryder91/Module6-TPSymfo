@@ -1,0 +1,20 @@
+{% extends "@CandidateBackAdmin/layout.html.twig" %}
+
+{% block title %}Supprimer une catégorie de compétence - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row"style="margin-top: 75px;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="alert alert-danger" role="alert">
+                    <p style="margin-bottom: 10px;">Etes vous certain de vouloir supprimer "{{ competenceCategory.title }}" ?</p>
+                    <form action="#" method="post">
+                        <input type="submit" value="Supprimer" class="btn btn-danger"/>
+                        {{ form_rest(form) }}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,7 @@
+Rest_Realisation:
+  type : rest
+  resource: '@CandidateBackCommonBundle/Resources/config/routing/routing_rest_realisation.yml'
+
+Rest_Profil:
+  type : rest
+  resource: '@CandidateBackCommonBundle/Resources/config/routing/routing_rest_profil.yml'

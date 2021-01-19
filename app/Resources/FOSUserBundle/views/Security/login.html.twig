@@ -1,0 +1,36 @@
+{% extends '::bo.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 140px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                {% if error %}
+                    <div class="alert alert-danger" role="alert" style="margin-top: 40px;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div id="login-form">
+
+                    <div style="text-align: center; margin: 20px 0px;">
+                        <img src="{{ asset('img/candidate-back-logo-250px.png') }}" alt="" style="width: 125px; height: 125px;">
+                    </div>
+                    <h1 style="font-size: 22px; font-weight: bold; text-align: center; margin-bottom: 20px;">Gestionnaire de CV</h1>
+                    <form action="{{ path("fos_user_security_check") }}" method="post" class="center-block">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'username'|trans }}"/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" id="password" name="_password" required="required" placeholder="{{ 'password'|trans }}"/>
+                        </div>
+                        <input class="btn btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
+
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
+{% endblock %}
+

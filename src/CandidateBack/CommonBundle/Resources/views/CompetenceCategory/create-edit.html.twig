@@ -1,0 +1,21 @@
+{% extends "@CandidateBackAdmin/layout.html.twig" %}
+
+{% block title %}Créer / Modifier catégorie compétence - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <h5>Créer / Modifier catégorie compétence</h5>
+            <div class="row">
+                <div class="col-md-12">
+                    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
